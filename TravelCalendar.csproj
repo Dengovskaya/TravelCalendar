@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{071CED58-124A-4A4B-8395-3EFC11325751}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TravelCalendar</RootNamespace>
+    <AssemblyName>TravelCalendar</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server.UserProfiles, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.Office.Server.UserProfiles\v4.0_15.0.0.0__71e9bce111e9429c\Microsoft.Office.Server.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.office.workflow.tasks, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalendarEventReceiver\CalendarEventReceiver.cs" />
+    <Compile Include="CONTROLTEMPLATES\UserControl1.ascx.cs">
+      <DependentUpon>UserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\UserControl1.ascx.designer.cs">
+      <DependentUpon>UserControl1.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisabledItemEventsScope.cs" />
+    <Compile Include="Layouts\ListConfig\ListConfigParameter.aspx.cs">
+      <DependentUpon>ListConfigParameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ListConfig\ListConfigParameter.aspx.designer.cs">
+      <DependentUpon>ListConfigParameter.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\TravelCalendar\TravelCalendarAPI.aspx.cs">
+      <DependentUpon>TravelCalendarAPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TravelCalendar\TravelCalendarAPI.aspx.designer.cs">
+      <DependentUpon>TravelCalendarAPI.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListConf.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Holiday.cs" />
+    <Compile Include="MultiModeFormFieldIterator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PsiExporter.cs" />
+    <Compile Include="SimpleException.cs" />
+    <Compile Include="Utils\SPLog.cs" />
+    <Compile Include="Utils\SPUtils.cs" />
+    <Compile Include="Web References\SvcCustomFields\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SvcLookupTable\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SvcResource\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Webparts\IntersectionOfHolidays\IntersectionOfHolidays.ascx.cs">
+      <DependentUpon>IntersectionOfHolidays.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CalendarEventReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2184a7f0-9a1a-4dc0-ae9f-33cfa7201b61}</SharePointProjectItemId>
+    </None>
+    <None Include="Calendar\CalendarInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{39106f66-5ac7-4ea3-a4f0-2a26dbfe65d6}</SharePointProjectItemId>
+    </None>
+    <None Include="Calendar\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0ed29436-eeb3-48b2-b6f9-eb17969eb219}</SharePointProjectItemId>
+    </None>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4c4a74ff-9868-47d1-a273-bb043c02da66}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\TotalHolidays\TotalHolidays.feature">
+      <FeatureId>{47f8124b-828f-4228-aa6e-20cb75ecaf0a}</FeatureId>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Features\HolidaysFeature\HolidaysFeature.feature">
+      <FeatureId>{90f9e4c1-c7cf-4df5-b67e-2d92eca76dd7}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{af138c60-e961-4625-928d-518d2e692f59}</SharePointProjectItemId>
+    </None>
+    <None Include="ListConfg\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3ef7f242-2750-4588-b69a-ac9153d5c519}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{2245de09-4596-4ee8-a2d8-39aa8ba83d35}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Web References\SvcCustomFields\CustomFieldDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvcCustomFields\CustomFields.wsdl" />
+    <None Include="Web References\SvcCustomFields\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SvcLookupTable\LookupTable.wsdl" />
+    <None Include="Web References\SvcLookupTable\LookupTableDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvcLookupTable\LookupTableMultiLangDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvcLookupTable\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SvcResource\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SvcResource\Resource.wsdl" />
+    <None Include="Web References\SvcResource\ResourceAssignmentDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvcResource\ResourceAuthorizationDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvcResource\ResourceDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvcResource\UserDelegationDataSet.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Webparts\IntersectionOfHolidays\IntersectionOfHolidays.webpart" />
+    <None Include="Webparts\IntersectionOfHolidays\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bcddefad-4392-42bd-a1a5-424739f98093}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CalendarEventReceiver\Elements.xml" />
+    <Content Include="Calendar\CalendarInstance\Elements.xml" />
+    <Content Include="Calendar\Elements.xml" />
+    <Content Include="Calendar\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CONTROLTEMPLATES\UserControl1.ascx" />
+    <Content Include="Features\TotalHolidays\TotalHolidays.Template.xml">
+      <DependentUpon>TotalHolidays.feature</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Features\HolidaysFeature\HolidaysFeature.Template.xml">
+      <DependentUpon>HolidaysFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\ListConfig\ListConfigParameter.aspx" />
+    <Content Include="Layouts\TravelCalendar\css\style.css" />
+    <Content Include="Layouts\TravelCalendar\js\jquery-1.8.3.js" />
+    <Content Include="Layouts\TravelCalendar\js\knockout-3.4.2.js" />
+    <Content Include="Layouts\TravelCalendar\js\knockout.mapping-latest.js" />
+    <Content Include="Layouts\TravelCalendar\js\script.js" />
+    <Content Include="Layouts\TravelCalendar\TravelCalendarAPI.aspx" />
+    <Content Include="ListConfg\Elements.xml" />
+    <Content Include="Webparts\IntersectionOfHolidays\Elements.xml" />
+    <Content Include="Webparts\IntersectionOfHolidays\IntersectionOfHolidays.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://alm-itsk.gazprom-neft.local/_vti_bin/PSI/CustomFields.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SvcCustomFields\</RelPath>
+      <UpdateFromURL>http://alm-itsk.gazprom-neft.local/_vti_bin/PSI/CustomFields.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://alm-itsk.gazprom-neft.local/_vti_bin/PSI/LookupTable.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SvcLookupTable\</RelPath>
+      <UpdateFromURL>http://alm-itsk.gazprom-neft.local/_vti_bin/PSI/LookupTable.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://alm-itsk.gazprom-neft.local/_vti_bin/PSI/Resource.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SvcResource\</RelPath>
+      <UpdateFromURL>http://alm-itsk.gazprom-neft.local/_vti_bin/PSI/Resource.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
